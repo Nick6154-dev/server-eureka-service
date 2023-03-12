@@ -1,5 +1,5 @@
-FROM openjdk:17
-VOLUME /tmp
-EXPOSE 8761
-ADD server-eureka-service-1.0.0.jar server-eureka.jar
+FROM eclipse-temurin:17.0.5_8-jre-alpine
+RUN mkdir /app
+WORKDIR /app
+COPY server-eureka-service-1.0.0.jar server-eureka.jar
 ENTRYPOINT ["java", "-jar", "/server-eureka.jar"]
